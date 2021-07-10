@@ -25,7 +25,7 @@ namespace MediatR.Web
             services.AddControllers();
 
             services.AddDbContext<ApplicationContext>(options =>
-                                                options.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=MediatR1;Trusted_Connection=True;MultipleActiveResultSets=true"));
+                                                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
             services.AddSwaggerGen(s =>
             {

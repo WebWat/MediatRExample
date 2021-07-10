@@ -19,6 +19,7 @@ namespace MediatR.Application.Features.Commands.ItemCreate
                 _repository = repository;
             }
 
+
             public async Task<int> Handle(Command request, CancellationToken cancellationToken)
             {
                 var item = new Item { Title = request.Title, UniqueNumber = request.UniqueNumber };

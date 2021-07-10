@@ -20,6 +20,7 @@ namespace MediatR.Application.Features.Commands.ItemDelete
                 _repository = repository;
             }
 
+
             public async Task<Unit> Handle(Command request, CancellationToken cancellationToken)
             {
                 var item = await _repository.FindByIdAsync(request.Id);
@@ -31,7 +32,7 @@ namespace MediatR.Application.Features.Commands.ItemDelete
 
                 await _repository.DeleteAsync(item);
 
-                await _mediator.Publish(new ItemDeleteNotification(item.Id)); //TODO: ??
+                await _mediator.Publish(new ItemDeleteNotification(item.Id));
 
                 return Unit.Value;
             }

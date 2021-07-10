@@ -17,6 +17,7 @@ namespace MediatR.Application.Features.Queries.GetItemsList
                 _repository = repository;
             }
 
+
             public async Task<IEnumerable<Item>> Handle(Query request, CancellationToken cancellationToken)
             {
                 var items = await _repository.GetListAsync();

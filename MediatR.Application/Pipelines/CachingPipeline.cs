@@ -20,6 +20,7 @@ namespace MediatR.Application.Pipelines
             _logger = logger;
         }
 
+
         public async Task<TResponse> Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate<TResponse> next)
         {
             var requestName = request.GetType().ToString().Split(".").Last();
@@ -36,7 +37,14 @@ namespace MediatR.Application.Pipelines
             _logger.LogInformation($"{requestName} returned not from the cache");
 
             response = await next();
+            
+            if (response == null)
+            {
+                _logger.LogWarning("Object for caching not found");
 
+                return response;
+            }
+        
             _cache.Set(request.CacheKey, response);
 
             return response;

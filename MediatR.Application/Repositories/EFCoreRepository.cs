@@ -17,11 +17,13 @@ namespace MediatR.Application.Repositories
             _context = context;
         }
 
+
         public async Task CreateAsync(T entity)
         {
             await _context.Set<T>().AddAsync(entity);
             await _context.SaveChangesAsync();
         }
+
         
         public async Task DeleteAsync(T entity)
         {
@@ -29,21 +31,25 @@ namespace MediatR.Application.Repositories
             await _context.SaveChangesAsync();
         }
 
+
         public async Task<T> FindByIdAsync(int id)
         {
             return await _context.Set<T>().AsNoTracking().FirstOrDefaultAsync(i => i.Id == id);
         }
+
 
         public async Task<IEnumerable<T>> GetListAsync()
         {
             return await _context.Set<T>().AsNoTracking().ToListAsync();
         }
 
+
         public async Task UpdateAsync(T entity)
         {
             _context.Set<T>().Update(entity);
             await _context.SaveChangesAsync();
         }
+
 
         public async ValueTask DisposeAsync()
         {

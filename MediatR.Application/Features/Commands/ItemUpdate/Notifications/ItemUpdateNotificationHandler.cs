@@ -13,6 +13,7 @@ namespace MediatR.Application.Features.Commands.ItemUpdate.Notifications
             _logger = logger;
         }
 
+
         public Task Handle(ItemUpdateNotification notification, CancellationToken cancellationToken)
         {
             _logger.LogInformation($"Item {notification.Id} was updated");

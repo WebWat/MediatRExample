@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace MediatR.Application.Pipelines
 {
     /// <summary>
-    /// Clears cache on item update
+    /// Clears cache on item update.
     /// </summary>
     /// <typeparam name="TRequest"></typeparam>
     /// <typeparam name="TResponse"></typeparam>
@@ -26,13 +26,22 @@ namespace MediatR.Application.Pipelines
             _logger = logger;
         }
 
+
         public async Task<TResponse> Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate<TResponse> next)
         {
             var requestName = request.GetType().ToString().Split(".").Last();
 
-            _cache.Remove(CacheKeys.GetItemsList);
+            if (_cache.TryGetValue(CacheKeys.GetItemsList, out _))
+            {
+                _cache.Remove(CacheKeys.GetItemsList);
 
-            if (request != null)
+                _logger.LogInformation($"{requestName} clear the list in cache");
+            }
+
+            // If we change an existing element, we remove it from the cache.
+            // (Does not apply to the method 'CreatingItem',
+            // because existing elements are not changed in any way.)
+            if (request.ItemId != null)
             {
                 var cacheKey = CacheKeys.GetItemById + request.ItemId;
 
@@ -40,9 +49,9 @@ namespace MediatR.Application.Pipelines
                 {
                     _cache.Remove(cacheKey);
                 }
-            }
 
-            _logger.LogInformation($"{requestName} clear the cache");
+                _logger.LogInformation($"{requestName} clear the cache item with key: {cacheKey}");
+            }
 
             return await next();
         }

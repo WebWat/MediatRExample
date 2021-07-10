@@ -3,6 +3,6 @@
     public class CacheKeys
     {
         public const string GetItemsList = "GetItemsList";
-        public const string GetItemById = "GetItemById_";
+        public const string GetItemById  = "GetItemById_";
     }
 }

@@ -13,6 +13,7 @@ namespace MediatR.Application.Features.Commands.ItemCreate.Notifications
             _logger = logger;
         }
 
+
         public Task Handle(ItemCreateNotification notification, CancellationToken cancellationToken)
         {
             _logger.LogInformation($"Item {notification.Id} was created");

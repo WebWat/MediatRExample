@@ -20,6 +20,7 @@ namespace MediatR.Application.Features.Commands.ItemUpdate
                 _repository = repository;
             }
 
+
             public async Task<int> Handle(Command request, CancellationToken cancellationToken)
             {
                 if (await _repository.FindByIdAsync(request.Id) == null)
@@ -27,7 +28,12 @@ namespace MediatR.Application.Features.Commands.ItemUpdate
                     throw new ArgumentNullException($"Item with id {request.Id} not exists");
                 }
 
-                var item = new Item { Id = request.Id, Title = request.Title, UniqueNumber = request.UniqueNumber };
+                var item = new Item 
+                { 
+                    Id = request.Id, 
+                    Title = request.Title, 
+                    UniqueNumber = request.UniqueNumber 
+                };
 
                 await _repository.UpdateAsync(item);
 

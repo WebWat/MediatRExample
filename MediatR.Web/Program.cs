@@ -25,10 +25,10 @@ namespace MediatR.Web
 
                     await ApplicationContextSeed.SeedAsync(applicationContext);
                 }
-                catch (Exception ex)
+                catch (Exception exception)
                 {
                     var logger = loggerFactory.CreateLogger<Program>();
-                    logger.LogError(ex, "An error occurred seeding the DB.");
+                    logger.LogError(exception, "An error occurred seeding the DB.");
                 }
             }
 

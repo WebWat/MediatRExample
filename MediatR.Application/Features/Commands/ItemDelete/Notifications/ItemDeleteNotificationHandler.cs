@@ -13,6 +13,7 @@ namespace MediatR.Application.Features.Commands.ItemDelete.Notifications
             _logger = logger;
         }
 
+
         public Task Handle(ItemDeleteNotification notification, CancellationToken cancellationToken)
         {
             _logger.LogInformation($"Item {notification.Id} was deleted");

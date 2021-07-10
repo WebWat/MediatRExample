@@ -16,6 +16,7 @@ namespace MediatR.Application.Features.Queries.GetItemById
                 _repository = repository;
             }
 
+
             public async Task<Item> Handle(Query request, CancellationToken cancellationToken)
             {
                 var item = await _repository.FindByIdAsync(request.Id);
