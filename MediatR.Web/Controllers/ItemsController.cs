@@ -21,7 +21,7 @@ namespace MediatR.Web.Controllers
             _mediator = mediator;
         }
 
-        //GET: /api/items/{id}
+        // GET: /api/items/{id}
         [HttpGet("{id}")]
         public async Task<ActionResult<IEnumerable<Item>>> GetItemById(int id)
         {
@@ -35,7 +35,7 @@ namespace MediatR.Web.Controllers
             return NotFound($"Item with id {id} not found");
         }
 
-        //GET: /api/items
+        // GET: /api/items
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Item>>> GetItems()
         {
@@ -44,7 +44,7 @@ namespace MediatR.Web.Controllers
             return Ok(response);
         }
 
-        //POST: /api/items
+        // POST: /api/items
         [HttpPost]
         public async Task<ActionResult<int>> CreateItem(ItemCreate.Command command)
         {
@@ -53,7 +53,7 @@ namespace MediatR.Web.Controllers
             return response;
         }
 
-        //PUT: /api/items
+        // PUT: /api/items
         [HttpPut]
         public async Task<ActionResult<int>> UpdateItem(ItemUpdate.Command command)
         {
@@ -62,7 +62,7 @@ namespace MediatR.Web.Controllers
             return response;
         }
 
-        //DELETE: /api/items
+        // DELETE: /api/items
         [HttpDelete]
         public async Task DeleteItem(ItemDelete.Command command)
         {
