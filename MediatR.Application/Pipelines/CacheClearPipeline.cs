@@ -40,7 +40,7 @@ namespace MediatR.Application.Pipelines
 
             // If we change an existing element, we remove it from the cache.
             // (Does not apply to the method 'CreatingItem',
-            // because existing elements are not changed in any way.)
+            // because existing elements are not changed in any way)
             if (request.ItemId != null)
             {
                 var cacheKey = CacheKeys.GetItemById + request.ItemId;

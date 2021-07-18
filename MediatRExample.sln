@@ -7,6 +7,14 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MediatR.Web", "MediatR.Web\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MediatR.Application", "MediatR.Application\MediatR.Application.csproj", "{1AF31107-2070-453A-BA13-D01A5CEFEE02}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{173598C6-EB07-4E14-820D-DC9503C60644}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UnitTests", "tests\UnitTests\UnitTests.csproj", "{979FC25E-B9D6-4DC8-81FC-E13705BEC9C8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{5F4708F2-1C86-40BB-B5A3-9096E29E89F3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntegrationTests", "tests\IntegrationTests\IntegrationTests.csproj", "{ECB29AB7-33E1-482A-93B9-9CF74B64DB58}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,9 +29,23 @@ Global
 		{1AF31107-2070-453A-BA13-D01A5CEFEE02}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1AF31107-2070-453A-BA13-D01A5CEFEE02}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1AF31107-2070-453A-BA13-D01A5CEFEE02}.Release|Any CPU.Build.0 = Release|Any CPU
+		{979FC25E-B9D6-4DC8-81FC-E13705BEC9C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{979FC25E-B9D6-4DC8-81FC-E13705BEC9C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{979FC25E-B9D6-4DC8-81FC-E13705BEC9C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{979FC25E-B9D6-4DC8-81FC-E13705BEC9C8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ECB29AB7-33E1-482A-93B9-9CF74B64DB58}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ECB29AB7-33E1-482A-93B9-9CF74B64DB58}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ECB29AB7-33E1-482A-93B9-9CF74B64DB58}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ECB29AB7-33E1-482A-93B9-9CF74B64DB58}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{2AC2F2D5-7AB7-4E95-A6FF-E1D6CAA544B7} = {5F4708F2-1C86-40BB-B5A3-9096E29E89F3}
+		{1AF31107-2070-453A-BA13-D01A5CEFEE02} = {5F4708F2-1C86-40BB-B5A3-9096E29E89F3}
+		{979FC25E-B9D6-4DC8-81FC-E13705BEC9C8} = {173598C6-EB07-4E14-820D-DC9503C60644}
+		{ECB29AB7-33E1-482A-93B9-9CF74B64DB58} = {173598C6-EB07-4E14-820D-DC9503C60644}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {ED288F56-63BA-4F1F-AB3B-BFE8D3543280}
