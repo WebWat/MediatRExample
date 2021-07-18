@@ -1,4 +1,6 @@
-﻿namespace MediatR.Application.Entities
+﻿using MediatR.Application.Common;
+
+namespace MediatR.Application.Entities
 {
     public class Item : BaseEntity
     {

@@ -1,10 +1,10 @@
-﻿using MediatR.Application.Entities;
+﻿using MediatR.Application.Common;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace MediatR.Application.Interfaces
 {
-    public interface IAsyncRepository<T> where T: BaseEntity
+    public interface IAsyncRepository<T> where T : BaseEntity
     {
         Task CreateAsync(T entity);
         Task UpdateAsync(T entity);

@@ -1,7 +1,7 @@
 ﻿using MediatR.Application.Entities;
 using Microsoft.EntityFrameworkCore;
 
-namespace MediatR.Application.Data
+namespace MediatR.Infrastructure.Data
 {
     public class ApplicationContext : DbContext
     {

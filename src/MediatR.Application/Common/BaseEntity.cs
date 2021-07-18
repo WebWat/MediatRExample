@@ -1,4 +1,4 @@
-﻿namespace MediatR.Application.Entities
+﻿namespace MediatR.Application.Common
 {
     public abstract class BaseEntity
     {

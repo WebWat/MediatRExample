@@ -24,7 +24,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\MediatR.Application\MediatR.Application.csproj" />
+    <ProjectReference Include="..\..\src\MediatR.Application\MediatR.Application.csproj" />
+    <ProjectReference Include="..\..\src\MediatR.Infrastructure\MediatR.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

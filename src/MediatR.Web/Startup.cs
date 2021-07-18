@@ -1,4 +1,4 @@
-using MediatR.Application.Data;
+using MediatR.Infrastructure.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -15,17 +15,19 @@ namespace MediatR.Web
         {
             Configuration = configuration;
         }
-        
+
         public IConfiguration Configuration { get; }
 
         public void ConfigureServices(IServiceCollection services)
         {
-            Application.Configure.AddApplication(services);
-
             services.AddControllers();
+
+            services.AddMemoryCache();
 
             services.AddDbContext<ApplicationContext>(options =>
                                                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+
+            services.AddApplication();
 
             services.AddSwaggerGen(s =>
             {

@@ -1,9 +1,9 @@
 ﻿using MediatR;
-using MediatR.Application.Data;
 using MediatR.Application.Entities;
 using MediatR.Application.Features.Commands.ItemCreate;
 using MediatR.Application.Interfaces;
-using MediatR.Application.Repositories;
+using MediatR.Infrastructure.Data;
+using MediatR.Infrastructure.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Moq;
 using System.Threading.Tasks;
@@ -26,7 +26,7 @@ namespace IntegrationTests.MediatR.Command
                 .UseInMemoryDatabase(databaseName: "MediatR1")
                 .Options;
             _context = new ApplicationContext(dbOptions);
-            _repository = new EFCoreRepository<Item>(_context);         
+            _repository = new EFCoreRepository<Item>(_context);
         }
 
 

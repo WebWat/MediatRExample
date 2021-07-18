@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace MediatR.Application.Data.Migrations
+namespace MediatR.Infrastructure.Data.Migrations
 {
     public partial class Initial : Migration
     {

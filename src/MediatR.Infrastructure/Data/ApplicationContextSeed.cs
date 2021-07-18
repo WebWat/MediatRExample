@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace MediatR.Application.Data
+namespace MediatR.Infrastructure.Data
 {
     public class ApplicationContextSeed
     {

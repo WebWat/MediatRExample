@@ -22,7 +22,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\MediatR.Application\MediatR.Application.csproj" />
+    <ProjectReference Include="..\..\src\MediatR.Application\MediatR.Application.csproj" />
   </ItemGroup>
 
 </Project>

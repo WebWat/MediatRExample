@@ -1,12 +1,12 @@
-﻿using MediatR.Application.Data;
-using MediatR.Application.Entities;
+﻿using MediatR.Application.Common;
 using MediatR.Application.Interfaces;
+using MediatR.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace MediatR.Application.Repositories
+namespace MediatR.Infrastructure.Repositories
 {
     public class EFCoreRepository<T> : IAsyncDisposable, IAsyncRepository<T> where T : BaseEntity
     {
@@ -24,7 +24,7 @@ namespace MediatR.Application.Repositories
             await _context.SaveChangesAsync();
         }
 
-        
+
         public async Task DeleteAsync(T entity)
         {
             _context.Set<T>().Remove(entity);

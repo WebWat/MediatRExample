@@ -7,6 +7,7 @@
   <ItemGroup>
     <PackageReference Include="MediatR" Version="9.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="5.0.7" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.8" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.7">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -16,6 +17,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\MediatR.Application\MediatR.Application.csproj" />
+    <ProjectReference Include="..\MediatR.Infrastructure\MediatR.Infrastructure.csproj" />
   </ItemGroup>
 
 
