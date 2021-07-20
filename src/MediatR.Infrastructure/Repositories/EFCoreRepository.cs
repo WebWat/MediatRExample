@@ -4,6 +4,7 @@ using MediatR.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace MediatR.Infrastructure.Repositories
@@ -18,36 +19,36 @@ namespace MediatR.Infrastructure.Repositories
         }
 
 
-        public async Task CreateAsync(T entity)
+        public async Task CreateAsync(T entity, CancellationToken cancellationToken = default)
         {
-            await _context.Set<T>().AddAsync(entity);
-            await _context.SaveChangesAsync();
+            await _context.Set<T>().AddAsync(entity, cancellationToken);
+            await _context.SaveChangesAsync(cancellationToken);
         }
 
 
-        public async Task DeleteAsync(T entity)
+        public async Task DeleteAsync(T entity, CancellationToken cancellationToken = default)
         {
             _context.Set<T>().Remove(entity);
-            await _context.SaveChangesAsync();
+            await _context.SaveChangesAsync(cancellationToken);
         }
 
 
-        public async Task<T> FindByIdAsync(int id)
+        public async Task<T> FindByIdAsync(int id, CancellationToken cancellationToken = default)
         {
-            return await _context.Set<T>().AsNoTracking().FirstOrDefaultAsync(i => i.Id == id);
+            return await _context.Set<T>().AsNoTracking().FirstOrDefaultAsync(i => i.Id == id, cancellationToken);
         }
 
 
-        public async Task<IEnumerable<T>> GetListAsync()
+        public async Task<IEnumerable<T>> GetListAsync(CancellationToken cancellationToken = default)
         {
-            return await _context.Set<T>().AsNoTracking().ToListAsync();
+            return await _context.Set<T>().AsNoTracking().ToListAsync(cancellationToken);
         }
 
 
-        public async Task UpdateAsync(T entity)
+        public async Task UpdateAsync(T entity, CancellationToken cancellationToken = default)
         {
             _context.Set<T>().Update(entity);
-            await _context.SaveChangesAsync();
+            await _context.SaveChangesAsync(cancellationToken);
         }
 
 

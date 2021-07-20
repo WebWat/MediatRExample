@@ -30,9 +30,9 @@ namespace MediatR.Application.Features.Commands.ItemDelete
                     throw new ArgumentNullException($"Item with id {request.Id} not exists");
                 }
 
-                await _repository.DeleteAsync(item);
+                await _repository.DeleteAsync(item, cancellationToken);
 
-                await _mediator.Publish(new ItemDeleteNotification(item.Id));
+                await _mediator.Publish(new ItemDeleteNotification(item.Id), cancellationToken);
 
                 return Unit.Value;
             }

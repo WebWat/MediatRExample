@@ -37,7 +37,7 @@ namespace MediatR.Application.Features.Commands.ItemUpdate
 
                 await _repository.UpdateAsync(item);
 
-                await _mediator.Publish(new ItemUpdateNotification(item.Id));
+                await _mediator.Publish(new ItemUpdateNotification(item.Id), cancellationToken);
 
                 return request.Id;
             }

@@ -19,7 +19,7 @@ namespace MediatR.Application.Features.Queries.GetItemById
 
             public async Task<Item> Handle(Query request, CancellationToken cancellationToken)
             {
-                var item = await _repository.FindByIdAsync(request.Id);
+                var item = await _repository.FindByIdAsync(request.Id, cancellationToken);
 
                 return item;
             }

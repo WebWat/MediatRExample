@@ -14,7 +14,7 @@ namespace UnitTests.MediatR.Queries
         public ReturnItemById()
         {
             _mockRepository = new();
-            _mockRepository.Setup(f => f.FindByIdAsync(1)).ReturnsAsync(GetItem());
+            _mockRepository.Setup(f => f.FindByIdAsync(1, default)).ReturnsAsync(GetItem());
         }
 
 

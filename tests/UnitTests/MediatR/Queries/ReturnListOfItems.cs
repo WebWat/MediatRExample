@@ -17,7 +17,7 @@ namespace UnitTests.MediatR.Queries
         public ReturnListOfItems()
         {
             _mockRepository = new();
-            _mockRepository.Setup(f => f.GetListAsync()).ReturnsAsync(GetItems());
+            _mockRepository.Setup(f => f.GetListAsync(default)).ReturnsAsync(GetItems());
         }
 
 

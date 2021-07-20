@@ -7,6 +7,7 @@ using MediatR.Application.Features.Commands.ItemUpdate;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using System.Threading;
 
 namespace MediatR.Web.Controllers
 {
@@ -23,9 +24,9 @@ namespace MediatR.Web.Controllers
 
         // GET: /api/items/{id}
         [HttpGet("{id}")]
-        public async Task<ActionResult<IEnumerable<Item>>> GetItemById(int id)
+        public async Task<ActionResult<IEnumerable<Item>>> GetItemById(int id, CancellationToken cancellationToken)
         {
-            var response = await _mediator.Send(new GetItemById.Query(id));
+            var response = await _mediator.Send(new GetItemById.Query(id), cancellationToken);
 
             if (response != null)
             {
@@ -37,36 +38,36 @@ namespace MediatR.Web.Controllers
 
         // GET: /api/items
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Item>>> GetItems()
+        public async Task<ActionResult<IEnumerable<Item>>> GetItems(CancellationToken cancellationToken)
         {
-            var response = await _mediator.Send(new GetItemsList.Query());
+            var response = await _mediator.Send(new GetItemsList.Query(), cancellationToken);
 
             return Ok(response);
         }
 
         // POST: /api/items
         [HttpPost]
-        public async Task<ActionResult<int>> CreateItem(ItemCreate.Command command)
+        public async Task<ActionResult<int>> CreateItem(ItemCreate.Command command, CancellationToken cancellationToken)
         {
-            var response = await _mediator.Send(command);
+            var response = await _mediator.Send(command, cancellationToken);
 
             return response;
         }
 
         // PUT: /api/items
         [HttpPut]
-        public async Task<ActionResult<int>> UpdateItem(ItemUpdate.Command command)
+        public async Task<ActionResult<int>> UpdateItem(ItemUpdate.Command command, CancellationToken cancellationToken)
         {
-            var response = await _mediator.Send(command);
+            var response = await _mediator.Send(command, cancellationToken);
 
             return response;
         }
 
         // DELETE: /api/items
         [HttpDelete]
-        public async Task DeleteItem(ItemDelete.Command command)
+        public async Task DeleteItem(ItemDelete.Command command, CancellationToken cancellationToken)
         {
-            await _mediator.Send(command);
+            await _mediator.Send(command, cancellationToken);
         }
     }
 }

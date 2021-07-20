@@ -24,9 +24,9 @@ namespace MediatR.Application.Features.Commands.ItemCreate
             {
                 var item = new Item { Title = request.Title, UniqueNumber = request.UniqueNumber };
 
-                await _repository.CreateAsync(item);
+                await _repository.CreateAsync(item, cancellationToken);
 
-                await _mediator.Publish(new ItemCreateNotification(item.Id));
+                await _mediator.Publish(new ItemCreateNotification(item.Id), cancellationToken);
 
                 return item.Id;
             }
