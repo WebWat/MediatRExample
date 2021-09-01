@@ -31,6 +31,7 @@ namespace MediatR.Web
 
             services.AddSwaggerGen(s =>
             {
+                s.EnableAnnotations();
                 s.SwaggerDoc("v1", new OpenApiInfo { Title = "Item API", Version = "v1" });
                 s.CustomSchemaIds(x => x.FullName);
             });
