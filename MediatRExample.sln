@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.30114.105
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32014.148
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{173598C6-EB07-4E14-820D-DC9503C60644}"
 EndProject
@@ -9,13 +9,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UnitTests", "tests\UnitTest
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{5F4708F2-1C86-40BB-B5A3-9096E29E89F3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntegrationTests", "tests\IntegrationTests\IntegrationTests.csproj", "{ECB29AB7-33E1-482A-93B9-9CF74B64DB58}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IntegrationTests", "tests\IntegrationTests\IntegrationTests.csproj", "{ECB29AB7-33E1-482A-93B9-9CF74B64DB58}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MediatR.Web", "src\MediatR.Web\MediatR.Web.csproj", "{A9F4FB9E-9A8F-4CC7-9A97-C9AF5F0E79F5}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MediatR.Application", "src\MediatR.Application\MediatR.Application.csproj", "{96832C55-9C70-4DFF-93B8-00B09EEA173A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MediatR.Infrastructure", "src\MediatR.Infrastructure\MediatR.Infrastructure.csproj", "{735688E9-FFCF-4502-A6DA-52334A4C1310}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MediatR.Infrastructure", "src\MediatR.Infrastructure\MediatR.Infrastructure.csproj", "{735688E9-FFCF-4502-A6DA-52334A4C1310}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoadTesting", "tests\LoadTesting\LoadTesting.csproj", "{CF4AFCF2-1BF3-454E-A3BD-7DDD62793093}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -43,6 +45,10 @@ Global
 		{735688E9-FFCF-4502-A6DA-52334A4C1310}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{735688E9-FFCF-4502-A6DA-52334A4C1310}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{735688E9-FFCF-4502-A6DA-52334A4C1310}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF4AFCF2-1BF3-454E-A3BD-7DDD62793093}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF4AFCF2-1BF3-454E-A3BD-7DDD62793093}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF4AFCF2-1BF3-454E-A3BD-7DDD62793093}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF4AFCF2-1BF3-454E-A3BD-7DDD62793093}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -53,6 +59,7 @@ Global
 		{A9F4FB9E-9A8F-4CC7-9A97-C9AF5F0E79F5} = {5F4708F2-1C86-40BB-B5A3-9096E29E89F3}
 		{96832C55-9C70-4DFF-93B8-00B09EEA173A} = {5F4708F2-1C86-40BB-B5A3-9096E29E89F3}
 		{735688E9-FFCF-4502-A6DA-52334A4C1310} = {5F4708F2-1C86-40BB-B5A3-9096E29E89F3}
+		{CF4AFCF2-1BF3-454E-A3BD-7DDD62793093} = {173598C6-EB07-4E14-820D-DC9503C60644}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {ED288F56-63BA-4F1F-AB3B-BFE8D3543280}
