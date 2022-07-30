@@ -16,7 +16,7 @@ builder.Services.AddControllers();
 builder.Services.AddMemoryCache();
 
 builder.Services.AddDbContext<ApplicationContext>(options =>
-                                    options.UseSqlServer(builder.Configuration["DefaultConnection"]));
+                                    options.UseSqlServer(builder.Configuration["ConnectionStrings:DefaultConnection"]));
 
 builder.Services.AddApplication();
 
