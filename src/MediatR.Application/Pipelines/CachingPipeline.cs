@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace MediatR.Application.Pipelines
 {
     public class CachingPipeline<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse>
-                                                        where TRequest : ICached
+                                                        where TRequest : ICached<TResponse>
     {
         private readonly IMemoryCache _cache;
         private readonly ILogger<CachingPipeline<TRequest, TResponse>> _logger;

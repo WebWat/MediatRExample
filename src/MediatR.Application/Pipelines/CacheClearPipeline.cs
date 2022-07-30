@@ -14,7 +14,7 @@ namespace MediatR.Application.Pipelines
     /// <typeparam name="TRequest"></typeparam>
     /// <typeparam name="TResponse"></typeparam>
     public class CacheClearPipeline<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse>
-                                                           where TRequest : ICacheClear
+                                                           where TRequest : ICacheClear<TResponse>
     {
         private readonly IMemoryCache _cache;
         private readonly ILogger<CacheClearPipeline<TRequest, TResponse>> _logger;

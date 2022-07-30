@@ -6,7 +6,7 @@ namespace MediatR.Application.Features.Queries.GetItemById
 {
     public partial class GetItemById
     {
-        public record Query(int Id) : IRequest<Item>, ICached
+        public record Query(int Id) : IRequest<Item>, ICached<int>
         {
             public string CacheKey => CacheKeys.GetItemById + Id;
         }
