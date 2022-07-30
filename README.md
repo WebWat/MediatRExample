@@ -1,0 +1,2 @@
+# MediatRExample
+Only an example
