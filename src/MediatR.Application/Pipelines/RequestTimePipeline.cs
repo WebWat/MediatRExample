@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 namespace MediatR.Application.Pipelines
 {
     public class RequestTimePipeline<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse>
+        where TRequest : IRequest<TResponse>
     {
         private readonly ILogger<RequestTimePipeline<TRequest, TResponse>> _logger;
 

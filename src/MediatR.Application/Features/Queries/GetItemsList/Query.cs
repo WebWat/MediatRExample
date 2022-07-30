@@ -7,7 +7,7 @@ namespace MediatR.Application.Features.Queries.GetItemsList
 {
     public partial class GetItemsList
     {
-        public record Query : IRequest<IEnumerable<Item>>, ICached
+        public record Query : IRequest<IEnumerable<Item>>, ICached<int>
         {
             public string CacheKey => CacheKeys.GetItemsList;
         }
